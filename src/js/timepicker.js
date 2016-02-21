@@ -157,6 +157,7 @@
 				}
 				$scope.selectHour = function(h) {
 					hour = h;
+					setInputValue();
 					mode = MODE_MIN;
 				}
 				$scope.selectMin = function(m) {
@@ -182,40 +183,5 @@
 				},
 				link: linkingFunction
 			};
-
-			/*return {
-				restrict: 'E',
-				transclude: true,
-				scope: {
-					ngModel:'='
-				},
-				//template: '<div>{{ ctrl.a }}</div>',
-				templateUrl: 'snippets/timepicker.html',
-				controllerAs: 'ctrl',
-				link: linkingFunction,
-				controller: function($element, $transclude, $scope) {
-					
-					self.selectHour = function(i) {
-						self.hour = i;
-						self.mode = 'm';
-						console.log(self.hour);
-					}
-					
-					self.selectMin = function(i) {
-						self.min = i;
-						close();
-					}
-					
-					
-					
-					var time = moment();
-					self.hour = time.hour();
-					self.min = time.minute();
-					self.open = false;
-					
-					$scope.sTime = self.time;
-					
-				}
-			};*/
 		}]);
 }(angular));
