@@ -6,7 +6,7 @@
   ],
   "description": "lightweight timepicker for angular",
   "main": [
-    "./src/timepicker.js",
+    "./src/js/timepicker.js",
     "./dist/timepicker.min.css"
   ],
   "moduleType": [],
