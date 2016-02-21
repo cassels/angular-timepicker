@@ -4,8 +4,7 @@
 gc-timepicker {
 	font-family: Helvetica Neue;
     font-size: @font-size;
-    width: 100%;
-    margin: 0 auto;
+	margin: 0 auto;
     float: left;
     clear: right;
     position: relative;
@@ -16,13 +15,11 @@ gc-timepicker {
 		color: @fg-color;
 		position: absolute;
 		z-index: 999;
-		min-width: 200px;
-		margin: 36px auto 0 0;
-		width: 150%;
+		margin-top: 2px;
+		width: @popup-width;
+  	 	padding: @popup-padding;
+  
 		.box-shadow(0 0 0 1px rgba(0,0,0,.1) inset);
-		/*visibility: hidden;*/
-		overflow: hidden;
-		padding: 0 0 2%;
 		.border-radius(3px, 3px, 3px, 3px);
 	
 		&-muted {
@@ -43,7 +40,7 @@ gc-timepicker {
 			width: @clock-width;
 			height: @clock-width;
 			margin: 7px auto;
-			background: darken(@bg-color, 15%);
+			.inverse(background, @bg-color, 15%);
 			.border-radius(50%, 50%, 50%, 50%);
 			.hour,
 			.min {
@@ -80,5 +77,11 @@ gc-timepicker {
 	.angle-sm-@{i} {
 		transform: rotate(unit(@i, deg)) translate((@clock-width/2) - 50px) rotate(unit(-@i, deg));
 	}
-	.generate-angles(@n, (@i + 1));
+	.generate-angles(@n, (@i + 30));
+}
+.inverse(@prop, @color, @percent) when (@inverse = true) {
+	@{prop}: lighten(@color, @percent);
+}
+.inverse(@prop, @color, @percent) when (@inverse = false) {
+	@{prop}: darken(@color, @percent);
 }
