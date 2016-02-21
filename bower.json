@@ -1,0 +1,29 @@
+{
+  "name": "gc-timepicker",
+  "homepage": "https://github.com/cassels/angular-timepicker",
+  "authors": [
+    "Graeme Cassels <graeme.cassels@googlemail.com>"
+  ],
+  "description": "lightweight timepicker for angular",
+  "main": [
+    "./src/timepicker.js",
+    "./dist/timepicker.min.css"
+  ],
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "timepicker",
+    "lightweight",
+    "light",
+    "angularjs",
+    "time"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
