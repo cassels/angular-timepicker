@@ -14,6 +14,14 @@
 				return num;
 			};
 		})
+		.filter('gcRange', function () {
+			return function (input, total) {
+				for (var i = 0; i < parseInt(total); i++) {
+					input.push(i);
+				}
+				return input;
+			};
+		})
 		.directive('gcTimepicker', ['$compile', '$filter', function($compile, $filter){
 			var fixAngle = function angle(angle) {
 				return ((angle -= 90) >= 360) ? angle - 360 : ((angle < 0) ? angle + 360: angle );
@@ -37,7 +45,7 @@
 						'<div class="gc-timepicker-body-group-hours"',
 							'data-ng-show="isHourMode()">',
 							'<div class="hour"', 
-								'data-ng-repeat="i in [] | range: 24"',
+								'data-ng-repeat="i in [] | gcRange: 24"',
 								'data-ng-click="selectHour(i)',
 								'"data-ng-class="style.hour(i)">',
 									'{{ (i == 0) ? "00" : i }}',
@@ -46,7 +54,7 @@
 						'<div class="gc-timepicker-body-group-mins"',
 							'data-ng-show="isMinMode()">',
 							'<div class="min"',
-								'data-ng-repeat="i in [] | range: 12"',
+								'data-ng-repeat="i in [] | gcRange: 12"',
 								'data-ng-click="selectMin(i*5)"',
 								'data-ng-class="style.min(i)">',
 									'{{ i * 5 }}',
